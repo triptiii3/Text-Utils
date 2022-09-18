@@ -7,10 +7,9 @@ import pic4 from "../4.png"
 import pic5 from "../5.png"
 import icon from "../icontext.png"
 import {
-  createBrowserRouter,
-  RouterProvider,
-  Route,
+  BrowserRouter as Router,Route,Routes,
   Link
+
 } from "react-router-dom";
 
 
@@ -20,7 +19,8 @@ export default function Navbar(props) {
     <nav className={`navbar navbar-expand-lg bg-${props.mode} navbar-${props.mode}`}>
   <div className="container-fluid">
     <img src={icon} className="icon"></img>
-    <a className="navbar-brand" href="/"><strong>{props.title}</strong></a>
+    <Router>
+    <Route className="navbar-brand" to="/"><strong>{props.title}</strong></Route></Router>
     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span className="navbar-toggler-icon"></span>
     </button>
